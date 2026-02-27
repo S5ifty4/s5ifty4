@@ -162,6 +162,23 @@ const diyProjects: DIYProject[] = [
     ],
   },
   {
+    emoji: "🧱",
+    title: "Patio Tiling",
+    desc: "Laid outdoor patio tile from scratch — prep, leveling, cutting, and grouting for a clean, durable finish.",
+    tags: ["Tile", "Outdoor"],
+    year: 2024,
+    cover: "/diy/patio-tiling/IMG_2930.jpg",
+    images: [
+      "/diy/patio-tiling/IMG_2900.jpg",
+      "/diy/patio-tiling/IMG_2905.jpg",
+      "/diy/patio-tiling/IMG_2906.jpg",
+      "/diy/patio-tiling/IMG_2907.jpg",
+      "/diy/patio-tiling/IMG_2908.jpg",
+      "/diy/patio-tiling/IMG_2915.jpg",
+      "/diy/patio-tiling/IMG_2930.jpg",
+    ],
+  },
+  {
     emoji: "🔧",
     title: "Workbench",
     desc: "Built a sturdy workshop workbench from scratch — solid top, lower shelf, and plenty of workspace for projects.",
