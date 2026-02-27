@@ -32,6 +32,8 @@ interface FilterBarProps {
   selectedCategories: Category[];
   onDayToggle: (day: number) => void;
   onCategoryToggle: (cat: Category) => void;
+  onAllDaysToggle: () => void;
+  onAllCategoriesToggle: () => void;
 }
 
 export function FilterBar({
@@ -40,6 +42,8 @@ export function FilterBar({
   selectedCategories,
   onDayToggle,
   onCategoryToggle,
+  onAllDaysToggle,
+  onAllCategoriesToggle,
 }: FilterBarProps) {
   const days = Object.entries(dayLabels)
     .map(([key, label]) => ({ num: parseInt(key, 10), label }))
@@ -47,9 +51,24 @@ export function FilterBar({
 
   const categories = Object.keys(CATEGORY_CONFIG) as Category[];
 
+  const allDaysActive = selectedDays.length === 0;
+  const allCatsActive = selectedCategories.length === 0;
+
   return (
     <div className="flex flex-wrap gap-4 p-4 bg-slate-900 border-b border-slate-800">
-      <div className="flex flex-wrap gap-2">
+      {/* Day filters */}
+      <div className="flex flex-wrap gap-2 items-center">
+        <button
+          onClick={onAllDaysToggle}
+          className={cn(
+            "px-3 py-1.5 rounded-full text-xs font-semibold transition-all",
+            allDaysActive
+              ? "bg-slate-300 text-slate-900"
+              : "bg-slate-800 text-slate-400 hover:bg-slate-700"
+          )}
+        >
+          All Days
+        </button>
         {days.map((day) => {
           const isSelected = selectedDays.includes(day.num);
           const color = DAY_PALETTE[(day.num - 1) % DAY_PALETTE.length];
@@ -70,8 +89,22 @@ export function FilterBar({
           );
         })}
       </div>
+
       <div className="w-px bg-slate-700" />
-      <div className="flex flex-wrap gap-2">
+
+      {/* Category filters */}
+      <div className="flex flex-wrap gap-2 items-center">
+        <button
+          onClick={onAllCategoriesToggle}
+          className={cn(
+            "px-3 py-1.5 rounded-full text-xs font-semibold transition-all",
+            allCatsActive
+              ? "bg-slate-300 text-slate-900"
+              : "bg-slate-800 text-slate-400 hover:bg-slate-700"
+          )}
+        >
+          All Categories
+        </button>
         {categories.map((cat) => {
           const config = CATEGORY_CONFIG[cat];
           const isSelected = selectedCategories.includes(cat);
