@@ -15,72 +15,37 @@ interface DIYProject {
 }
 
 const diyProjects: DIYProject[] = [
+  // 2026
   {
     emoji: "🚪",
     title: "Built-in IKEA Pax Closet",
     desc: "Floor-to-ceiling built-in with custom baseboard, panels, and crown molding trim — stock flat-pack made architectural.",
     tags: ["Woodworking", "Trim Work", "IKEA Hack"],
-    year: 2024,
+    year: 2026,
   },
+  // 2025
   {
     emoji: "🪣",
     title: "Powder Room Remodel",
     desc: "Full gut — board & batten wainscoting, bold wallpaper, new vanity and fixtures. Tiny room, big transformation.",
     tags: ["Wallpaper", "Millwork", "Plumbing"],
-    year: 2024,
+    year: 2025,
   },
+  // 2024
   {
     emoji: "🔥",
     title: "TV Wall with Fireplace",
     desc: "Electric fireplace insert, flanking floor-to-ceiling cabinets, full tile surround. Anchor of the family room.",
     tags: ["Tile", "Electrical", "Carpentry"],
-    year: 2023,
-  },
-  {
-    emoji: "🪑",
-    title: "Kitchen Banquette",
-    desc: "Custom built-in bench seating with lift-top storage for the breakfast nook. Framed from scratch, cushioned for Sunday mornings.",
-    tags: ["Framing", "Upholstery", "Storage"],
-    year: 2023,
-    cover: "/diy/banquette/10-finished.jpg",
-    images: [
-      "/diy/banquette/01-before.jpg",
-      "/diy/banquette/02-framing-start.jpg",
-      "/diy/banquette/03-framing-full.jpg",
-      "/diy/banquette/04-box-build.jpg",
-      "/diy/banquette/05-panels.jpg",
-      "/diy/banquette/06-drawers.jpg",
-      "/diy/banquette/07-seat-tops.jpg",
-      "/diy/banquette/08-painting.jpg",
-      "/diy/banquette/09-painted.jpg",
-      "/diy/banquette/10-finished.jpg",
-    ],
-  },
-  {
-    emoji: "📚",
-    title: "Built-in Office Bookshelf",
-    desc: "Floor-to-ceiling shelving, integrated desk, hidden cable management. Blank wall → proper home office.",
-    tags: ["Woodworking", "Millwork"],
     year: 2024,
-    cover: "/images/diy/office-bookshelf/IMG_2875.jpg",
-    images: [
-      "/images/diy/office-bookshelf/IMG_2619.jpg",
-      "/images/diy/office-bookshelf/IMG_2746.jpg",
-      "/images/diy/office-bookshelf/IMG_2756.jpg",
-      "/images/diy/office-bookshelf/IMG_2789.jpg",
-      "/images/diy/office-bookshelf/IMG_2805.jpg",
-      "/images/diy/office-bookshelf/IMG_2818.jpg",
-      "/images/diy/office-bookshelf/IMG_2830.jpg",
-      "/images/diy/office-bookshelf/IMG_2853.jpg",
-      "/images/diy/office-bookshelf/IMG_2875.jpg",
-    ],
   },
+  // 2021
   {
     emoji: "🎬",
     title: "Home Movie Theater",
     desc: "Converted a bedroom into a dedicated cinema: tiered riser, acoustic panels, projector, 4K screen, Dolby surround.",
     tags: ["AV/Audio", "Framing", "Acoustic"],
-    year: 2025,
+    year: 2021,
     cover: "/diy/movie-theater/IMG_5867.jpg",
     images: [
       "/diy/movie-theater/IMG_4883.jpg",
@@ -112,12 +77,13 @@ const diyProjects: DIYProject[] = [
       "/diy/movie-theater/IMG_5867.jpg",
     ],
   },
+  // 2020 — Entertainment Center, Hallway Window, Office, Banquette, Patio Tiling, Workbench, Planters
   {
     emoji: "📺",
     title: "Built-in Entertainment Center",
     desc: "Custom floor-to-ceiling entertainment center with integrated electric fireplace, flanking cabinets, and tile surround — the anchor of the family room.",
     tags: ["Carpentry", "Tile", "Electrical"],
-    year: 2025,
+    year: 2020,
     cover: "/diy/entertainment-center/IMG_4573.jpg",
     images: [
       "/diy/entertainment-center/IMG_3986.jpg",
@@ -144,7 +110,7 @@ const diyProjects: DIYProject[] = [
     title: "Hallway Window",
     desc: "Custom hallway window build — framing, trim, and finishing work to bring natural light into an interior space.",
     tags: ["Framing", "Trim Work", "Carpentry"],
-    year: 2025,
+    year: 2020,
     cover: "/diy/hallway-window/IMG_3948.jpg",
     images: [
       "/diy/hallway-window/IMG_3540.jpg",
@@ -162,11 +128,50 @@ const diyProjects: DIYProject[] = [
     ],
   },
   {
+    emoji: "📚",
+    title: "Built-in Office Bookshelf",
+    desc: "Floor-to-ceiling shelving, integrated desk, hidden cable management. Blank wall → proper home office.",
+    tags: ["Woodworking", "Millwork"],
+    year: 2020,
+    cover: "/images/diy/office-bookshelf/IMG_2875.jpg",
+    images: [
+      "/images/diy/office-bookshelf/IMG_2619.jpg",
+      "/images/diy/office-bookshelf/IMG_2746.jpg",
+      "/images/diy/office-bookshelf/IMG_2756.jpg",
+      "/images/diy/office-bookshelf/IMG_2789.jpg",
+      "/images/diy/office-bookshelf/IMG_2805.jpg",
+      "/images/diy/office-bookshelf/IMG_2818.jpg",
+      "/images/diy/office-bookshelf/IMG_2830.jpg",
+      "/images/diy/office-bookshelf/IMG_2853.jpg",
+      "/images/diy/office-bookshelf/IMG_2875.jpg",
+    ],
+  },
+  {
+    emoji: "🪑",
+    title: "Kitchen Banquette",
+    desc: "Custom built-in bench seating with lift-top storage for the breakfast nook. Framed from scratch, cushioned for Sunday mornings.",
+    tags: ["Framing", "Upholstery", "Storage"],
+    year: 2020,
+    cover: "/diy/banquette/10-finished.jpg",
+    images: [
+      "/diy/banquette/01-before.jpg",
+      "/diy/banquette/02-framing-start.jpg",
+      "/diy/banquette/03-framing-full.jpg",
+      "/diy/banquette/04-box-build.jpg",
+      "/diy/banquette/05-panels.jpg",
+      "/diy/banquette/06-drawers.jpg",
+      "/diy/banquette/07-seat-tops.jpg",
+      "/diy/banquette/08-painting.jpg",
+      "/diy/banquette/09-painted.jpg",
+      "/diy/banquette/10-finished.jpg",
+    ],
+  },
+  {
     emoji: "🧱",
     title: "Patio Tiling",
     desc: "Laid outdoor patio tile from scratch — prep, leveling, cutting, and grouting for a clean, durable finish.",
     tags: ["Tile", "Outdoor"],
-    year: 2024,
+    year: 2020,
     cover: "/diy/patio-tiling/IMG_2930.jpg",
     images: [
       "/diy/patio-tiling/IMG_2900.jpg",
@@ -183,7 +188,7 @@ const diyProjects: DIYProject[] = [
     title: "Workbench",
     desc: "Built a sturdy workshop workbench from scratch — solid top, lower shelf, and plenty of workspace for projects.",
     tags: ["Woodworking", "Storage"],
-    year: 2024,
+    year: 2020,
     cover: "/diy/workbench/IMG_2459.jpg",
     images: [
       "/diy/workbench/IMG_2412.jpg",
@@ -201,7 +206,7 @@ const diyProjects: DIYProject[] = [
     title: "Raised Planters",
     desc: "Built a set of cedar raised garden beds from scratch — elevated design with liner, drainage, and a warm walnut stain. From raw lumber to backyard ready.",
     tags: ["Woodworking", "Outdoor", "Garden"],
-    year: 2023,
+    year: 2020,
     cover: "/diy/planters/05-finished.jpg",
     images: [
       "/diy/planters/01-frame.jpg",
