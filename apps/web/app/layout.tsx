@@ -3,7 +3,7 @@ import { Nav } from "@/components/nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "s5ifty4.com | Manish",
+  title: "S5ifty4",
   description: "Senior Software Engineer · DIYer · Traveler",
 };
 
