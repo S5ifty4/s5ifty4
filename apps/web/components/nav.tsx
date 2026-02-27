@@ -18,7 +18,7 @@ export function Nav() {
     <nav className="sticky top-0 z-50 h-[52px] bg-slate-950 border-b border-slate-800">
       <div className="mx-auto max-w-7xl h-full px-4 flex items-center justify-between">
         <Link href="/" className="text-lg font-medium text-white">
-          s5ifty4<span className="text-sky-400">.com</span>
+          S5ifty4
         </Link>
         <div className="flex items-center gap-1">
           {navLinks.map((link) => {

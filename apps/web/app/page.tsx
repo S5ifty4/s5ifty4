@@ -43,9 +43,8 @@ export default function HomePage() {
       >
         <h1 className="text-5xl md:text-6xl font-bold text-slate-100 mb-4">
           <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
-            s5ifty4
+            S5ifty4
           </span>
-          <span className="text-sky-400">.com</span>
         </h1>
       </motion.div>
 
