@@ -75,12 +75,7 @@ const nycFeb2026: TripData = {
       cat: 'dessert', day: [1], time: '7:00 PM',
       note: 'Classic banana pudding — Rockefeller Center', order: 7,
     },
-    {
-      name: "Dizzy's Club (Jazz at Lincoln Center)",
-      lat: 40.7688, lng: -73.9832,
-      cat: 'nightlife', day: [1], time: '10:00 PM',
-      note: 'Columbus Circle', order: 8,
-    },
+
 
     // ── Day 2 · Sun 22 ──────────────────────────────────────────
     {
@@ -131,12 +126,7 @@ const nycFeb2026: TripData = {
       cat: 'food', day: [2], time: '7:00 PM',
       note: 'Dinner — Theater District', order: 8,
     },
-    {
-      name: 'Smalls Jazz Club',
-      lat: 40.734, lng: -74.0025,
-      cat: 'nightlife', day: [2], time: '10:00 PM',
-      note: 'West Village — intimate jazz/blues', order: 9,
-    },
+
 
     // ── Day 3 · Mon 23 ──────────────────────────────────────────
     {
@@ -193,12 +183,7 @@ const nycFeb2026: TripData = {
       cat: 'dessert', day: [3], time: 'Evening',
       note: 'Gelato near FiDi', order: 9,
     },
-    {
-      name: "Arthur's Tavern",
-      lat: 40.7317, lng: -74.0008,
-      cat: 'nightlife', day: [3], time: '9:30 PM',
-      note: 'Jazz/blues — West Village', order: 10,
-    },
+
 
     // ── Day 4 · Tue 24 ──────────────────────────────────────────
     {
@@ -246,7 +231,7 @@ const nycFeb2026: TripData = {
     {
       name: 'Hamilton (Richard Rodgers Theatre)',
       lat: 40.7595, lng: -73.9863,
-      cat: 'nightlife', day: [4], time: '7:00 PM',
+      cat: 'attraction', day: [4], time: '7:00 PM',
       note: 'Broadway musical — Hamilton!', order: 8,
     },
 
