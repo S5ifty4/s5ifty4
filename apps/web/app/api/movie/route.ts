@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
+export const maxDuration = 30; // seconds (Vercel Pro/Hobby limit)
+
 // Genre ID mapping for TMDB
 const GENRE_MAP: Record<string, number | null> = {
   action: 28,
@@ -118,8 +120,8 @@ async function discoverMovies(
   const isRecent = genre === "recent";
   const genreId = GENRE_MAP[genre];
 
-  // Fetch 5 pages for variety
-  for (let page = 1; page <= 5; page++) {
+  // Fetch 2 pages for variety (keep response fast)
+  for (let page = 1; page <= 2; page++) {
     const params: Record<string, string> = {
       sort_by: "vote_average.desc",
       "vote_count.gte": "50",
@@ -161,48 +163,51 @@ async function filterMoviesByRating(
   movies: TMDBMovie[],
   minRating: number
 ): Promise<FilteredMovie[]> {
+  // Process up to 20 movies in parallel batches of 5
+  const moviesToProcess = movies.slice(0, 20);
   const filtered: FilteredMovie[] = [];
+  const BATCH_SIZE = 5;
 
-  // Process up to 30 movies
-  const moviesToProcess = movies.slice(0, 30);
+  for (let i = 0; i < moviesToProcess.length; i += BATCH_SIZE) {
+    const batch = moviesToProcess.slice(i, i + BATCH_SIZE);
 
-  for (const movie of moviesToProcess) {
-    const imdbId = await getIMDBId(movie.id);
-    if (!imdbId) continue;
+    const results = await Promise.all(
+      batch.map(async (movie) => {
+        const imdbId = await getIMDBId(movie.id);
+        if (!imdbId) return null;
 
-    let rtScore = 0;
-    let imdbRating = "N/A";
+        let rtScore = 0;
+        let imdbRating = "N/A";
 
-    try {
-      const omdbData = await fetchOMDB(imdbId);
-      const rtRating = omdbData.Ratings?.find((r) => r.Source === "Rotten Tomatoes");
-      const imdbRatingData = omdbData.Ratings?.find((r) => r.Source === "Internet Movie Database");
+        try {
+          const omdbData = await fetchOMDB(imdbId);
+          const rtRating = omdbData.Ratings?.find((r) => r.Source === "Rotten Tomatoes");
+          const imdbRatingData = omdbData.Ratings?.find((r) => r.Source === "Internet Movie Database");
 
-      if (rtRating) {
-        rtScore = parseRTScore(rtRating.Value);
-      } else {
-        // Fallback: scale TMDB score (0-10) to 0-100
-        rtScore = Math.round(movie.vote_average * 10);
-      }
+          if (rtRating) {
+            rtScore = parseRTScore(rtRating.Value);
+          } else {
+            rtScore = Math.round(movie.vote_average * 10);
+          }
 
-      if (imdbRatingData) {
-        imdbRating = imdbRatingData.Value.split("/")[0] ?? "N/A";
-      }
-    } catch {
-      // Use TMDB score as fallback
-      rtScore = Math.round(movie.vote_average * 10);
-    }
+          if (imdbRatingData) {
+            imdbRating = imdbRatingData.Value.split("/")[0] ?? "N/A";
+          }
+        } catch {
+          rtScore = Math.round(movie.vote_average * 10);
+        }
 
-    if (rtScore >= minRating) {
-      filtered.push({
-        id: movie.id,
-        imdbId,
-        title: movie.title,
-        rtScore,
-        imdbRating,
-        tmdbScore: movie.vote_average,
-      });
-    }
+        if (rtScore >= minRating) {
+          return { id: movie.id, imdbId, title: movie.title, rtScore, imdbRating, tmdbScore: movie.vote_average };
+        }
+        return null;
+      })
+    );
+
+    filtered.push(...results.filter((r): r is FilteredMovie => r !== null));
+
+    // Stop early if we have enough candidates
+    if (filtered.length >= 10) break;
   }
 
   return filtered;
