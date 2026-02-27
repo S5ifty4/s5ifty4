@@ -42,27 +42,11 @@ export default function HomePage() {
         className="text-center"
       >
         <h1 className="text-5xl md:text-6xl font-bold text-slate-100 mb-4">
-          Hi, I&apos;m{" "}
           <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
-            Manish.
+            s5ifty4
           </span>
+          <span className="text-sky-400">.com</span>
         </h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-xl text-slate-300 mb-2"
-        >
-          Senior Software Engineer · DIYer · Traveler
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-slate-400"
-        >
-          Newark, CA
-        </motion.p>
       </motion.div>
 
       <motion.div
