@@ -52,7 +52,7 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="flex flex-wrap justify-center gap-4 mt-12"
+        className="flex flex-wrap justify-center items-stretch gap-4 mt-12"
       >
         {ctaCards.map((card, index) => (
           <motion.div
@@ -64,7 +64,7 @@ export default function HomePage() {
           >
             <Link
               href={card.href}
-              className="block w-64 p-6 rounded-2xl bg-slate-800/50 border border-slate-700 backdrop-blur-sm hover:border-slate-600 transition-colors"
+              className="block w-64 h-full p-6 rounded-2xl bg-slate-800/50 border border-slate-700 backdrop-blur-sm hover:border-slate-600 transition-colors"
             >
               <div className="text-3xl mb-3">{card.emoji}</div>
               <h2 className="text-lg font-semibold text-slate-100 mb-1">
