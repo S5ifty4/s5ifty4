@@ -79,9 +79,6 @@ export default function HomePage() {
                 ✕
               </button>
 
-              <h2 className="text-2xl font-bold text-slate-100 mb-2 text-center">
-                What&apos;s in a name?
-              </h2>
               <p className="text-slate-400 text-center mb-8 text-sm">
                 <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent font-semibold">S5ifty4</span>{" "}
                 = the Audi <span className="text-sky-400 font-semibold">S5</span> + the BMW <span className="text-indigo-400 font-semibold">S54</span> engine
@@ -113,15 +110,11 @@ export default function HomePage() {
                     />
                   </div>
                   <div className="text-center">
-                    <p className="text-indigo-400 font-semibold text-lg">BMW S54</p>
+                    <p className="text-indigo-400 font-semibold text-lg">BMW S54 Motor</p>
                     <p className="text-slate-500 text-xs">E46 M3 — the greatest inline-6 ever built</p>
                   </div>
                 </div>
               </div>
-
-              <p className="text-slate-500 text-center mt-6 text-xs">
-                Two icons. One name.
-              </p>
             </motion.div>
           </motion.div>
         )}
