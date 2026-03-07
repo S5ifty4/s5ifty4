@@ -257,7 +257,7 @@ const diyProjects: DIYProject[] = [
   },
   {
     title: "Planters",
-    desc: "Built a number of cedar planters — interior liner, drainage system and stained.",
+    desc: "Built a number of cedar planters: interior liner, drainage system and stained.",
     tags: ["Woodworking"],
     year: 2020,
     cover: "/diy/planters/05-finished.jpg",
