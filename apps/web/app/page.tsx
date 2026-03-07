@@ -104,14 +104,14 @@ export default function HomePage() {
                   <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden">
                     <Image
                       src="/images/bmw-s54.jpg"
-                      alt="BMW S54 Engine"
+                      alt="BMW S54 Motor"
                       fill
                       className="object-cover"
                     />
                   </div>
                   <div className="text-center">
-                    <p className="text-indigo-400 font-semibold text-lg">BMW S54 Motor</p>
-                    <p className="text-slate-500 text-xs">E46 M3 — the greatest inline-6 ever built</p>
+                    <p className="text-indigo-400 font-semibold text-lg">BMW E46 S54 Motor</p>
+                    <p className="text-slate-500 text-xs">The greatest inline-6 ever built</p>
                   </div>
                 </div>
               </div>
