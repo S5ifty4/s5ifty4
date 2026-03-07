@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 interface DIYProject {
-  emoji: string;
   title: string;
   desc: string;
   tags: string[];
@@ -17,10 +16,9 @@ interface DIYProject {
 const diyProjects: DIYProject[] = [
   // 2026
   {
-    emoji: "🚪",
     title: "Built-in IKEA Pax Closet",
-    desc: "Floor-to-ceiling built-in with custom baseboard, panels, and crown molding trim — stock flat-pack made architectural.",
-    tags: ["Woodworking", "Trim Work", "IKEA Hack"],
+    desc: "Built-in with baseboard, panels, crown moulding, and between unit trim. PAX lighting wired throughout and hooked into existing recessed lights.",
+    tags: ["Woodworking", "Trim Work", "IKEA Hack", "Electrical"],
     year: 2026,
     cover: "/diy/closet/IMG_9192.jpg",
     images: [
@@ -38,17 +36,16 @@ const diyProjects: DIYProject[] = [
       "/diy/closet/IMG_9087.jpg",
       "/diy/closet/IMG_9102.jpg",
       "/diy/closet/IMG_9132.jpg",
-      "/diy/closet/IMG_9192.jpg",
       "/diy/closet/IMG_9193.jpg",
       "/diy/closet/IMG_9194.jpg",
+      "/diy/closet/IMG_9192.jpg",
     ],
   },
   // 2025
   {
-    emoji: "🪣",
     title: "Powder Room Remodel",
-    desc: "Full gut — board & batten wainscoting, bold wallpaper, new vanity and fixtures. Tiny room, big transformation.",
-    tags: ["Wallpaper", "Millwork", "Plumbing"],
+    desc: "Board & batten wainscoting, wallpaper, fixtures, and complementing paint.",
+    tags: ["Millwork", "Plumbing"],
     year: 2025,
     cover: "/diy/powderroom/IMG_7760.jpg",
     images: [
@@ -73,9 +70,8 @@ const diyProjects: DIYProject[] = [
   },
   // 2024
   {
-    emoji: "🔥",
-    title: "TV Wall with Fireplace",
-    desc: "Electric fireplace insert, flanking floor-to-ceiling cabinets, full tile surround. Anchor of the family room.",
+    title: "TV Feature Wall",
+    desc: "Electric fireplace insert, built in cabinets, tile surround, concealed wiring. ",
     tags: ["Tile", "Electrical", "Carpentry"],
     year: 2024,
     cover: "/diy/tvwall/IMG_6017.jpg",
@@ -99,39 +95,11 @@ const diyProjects: DIYProject[] = [
       "/diy/tvwall/IMG_6017.jpg",
     ],
   },
-  {
-    emoji: "📺",
-    title: "Built-in Entertainment Center",
-    desc: "Custom floor-to-ceiling entertainment center with integrated electric fireplace, flanking cabinets, and tile surround — the anchor of the family room.",
-    tags: ["Carpentry", "Tile", "Electrical"],
-    year: 2020,
-    cover: "/diy/entertainment-center/IMG_4605.jpg",
-    images: [
-      "/diy/entertainment-center/IMG_3986.jpg",
-      "/diy/entertainment-center/IMG_4011.jpg",
-      "/diy/entertainment-center/IMG_4026.jpg",
-      "/diy/entertainment-center/IMG_4027.jpg",
-      "/diy/entertainment-center/IMG_4099.jpg",
-      "/diy/entertainment-center/IMG_4101.jpg",
-      "/diy/entertainment-center/IMG_4106.jpg",
-      "/diy/entertainment-center/IMG_4300.jpg",
-      "/diy/entertainment-center/IMG_4302.jpg",
-      "/diy/entertainment-center/IMG_4331.jpg",
-      "/diy/entertainment-center/IMG_4334.jpg",
-      "/diy/entertainment-center/IMG_4367.jpg",
-      "/diy/entertainment-center/IMG_4385.jpg",
-      "/diy/entertainment-center/IMG_4401.jpg",
-      "/diy/entertainment-center/IMG_4573.jpg",
-      "/diy/entertainment-center/IMG_4574.jpg",
-      "/diy/entertainment-center/IMG_4605.jpg",
-    ],
-  },
   // 2021
   {
-    emoji: "🎬",
     title: "Home Movie Theater",
-    desc: "Converted a bedroom into a dedicated cinema: tiered riser, acoustic panels, projector, 4K screen, Dolby surround.",
-    tags: ["AV/Audio", "Framing", "Acoustic"],
+    desc: "Converted a bedroom into a dedicated theater room: tiered riser, ceiling mount projector, built in surround sound speakers, converted cathedral ceiling to flat ceiling for better acoustics and concealed wire above faux ceiling.",
+    tags: ["AV/Audio", "Framing", "Electrical"],
     year: 2021,
     cover: "/diy/movie-theater/IMG_5867.jpg",
     images: [
@@ -164,11 +132,36 @@ const diyProjects: DIYProject[] = [
       "/diy/movie-theater/IMG_5867.jpg",
     ],
   },
-  // 2020 — Hallway Window, Office, Banquette, Patio Tiling, Workbench, Planters
+  // 2020 — Entertainment Center, Hallway Window, Office, Banquette, Patio Tiling, Workbench, Planters
   {
-    emoji: "🪟",
+    title: "Built-in Entertainment Center",
+    desc: "Entertainment center with built in cabinets, custom trim and crown moulding, shiplap background, concealed wiring.",
+    tags: ["Carpentry", "Electrical"],
+    year: 2020,
+    cover: "/diy/entertainment-center/IMG_4605.jpg",
+    images: [
+      "/diy/entertainment-center/IMG_3986.jpg",
+      "/diy/entertainment-center/IMG_4011.jpg",
+      "/diy/entertainment-center/IMG_4026.jpg",
+      "/diy/entertainment-center/IMG_4027.jpg",
+      "/diy/entertainment-center/IMG_4099.jpg",
+      "/diy/entertainment-center/IMG_4101.jpg",
+      "/diy/entertainment-center/IMG_4106.jpg",
+      "/diy/entertainment-center/IMG_4300.jpg",
+      "/diy/entertainment-center/IMG_4302.jpg",
+      "/diy/entertainment-center/IMG_4331.jpg",
+      "/diy/entertainment-center/IMG_4334.jpg",
+      "/diy/entertainment-center/IMG_4367.jpg",
+      "/diy/entertainment-center/IMG_4385.jpg",
+      "/diy/entertainment-center/IMG_4401.jpg",
+      "/diy/entertainment-center/IMG_4573.jpg",
+      "/diy/entertainment-center/IMG_4574.jpg",
+      "/diy/entertainment-center/IMG_4605.jpg",
+    ],
+  },
+  {
     title: "Hallway Window",
-    desc: "Custom hallway window build — framing, trim, and finishing work to bring natural light into an interior space.",
+    desc: "Custom framed window to bring natural lighting to hallway.",
     tags: ["Framing", "Trim Work", "Carpentry"],
     year: 2020,
     cover: "/diy/hallway-window/IMG_3948.jpg",
@@ -188,10 +181,9 @@ const diyProjects: DIYProject[] = [
     ],
   },
   {
-    emoji: "🧱",
     title: "Patio Tiling",
-    desc: "Laid outdoor patio tile from scratch — prep, leveling, cutting, and grouting for a clean, durable finish.",
-    tags: ["Tile", "Outdoor"],
+    desc: "Laid patio tiles: prep, leveling, cutting, and grouting.",
+    tags: ["Tile"],
     year: 2020,
     cover: "/diy/patio-tiling/IMG_2930.jpg",
     images: [
@@ -205,10 +197,9 @@ const diyProjects: DIYProject[] = [
     ],
   },
   {
-    emoji: "📚",
     title: "Built-in Office Bookshelf",
-    desc: "Floor-to-ceiling shelving, integrated desk, hidden cable management. Blank wall → proper home office.",
-    tags: ["Woodworking", "Millwork"],
+    desc: "Shelving, integrated bench, hidden cable management, custom cushions.",
+    tags: ["Woodworking", "Millwork", "Electrical", "Upholstery"],
     year: 2020,
     cover: "/diy/office/IMG_2875.jpg",
     images: [
@@ -229,10 +220,9 @@ const diyProjects: DIYProject[] = [
     ],
   },
   {
-    emoji: "🪑",
     title: "Kitchen Banquette",
-    desc: "Custom built-in bench seating with lift-top storage for the breakfast nook. Framed from scratch, cushioned for Sunday mornings.",
-    tags: ["Framing", "Upholstery", "Storage"],
+    desc: "Custom built-in bench seating with drawer storage and custom cushions.",
+    tags: ["Framing", "Upholstery"],
     year: 2020,
     cover: "/diy/banquette/10-finished.jpg",
     images: [
@@ -249,10 +239,9 @@ const diyProjects: DIYProject[] = [
     ],
   },
   {
-    emoji: "🔧",
     title: "Workbench",
-    desc: "Built a sturdy workshop workbench from scratch — solid top, lower shelf, and plenty of workspace for projects.",
-    tags: ["Woodworking", "Storage"],
+    desc: "Workshop workbench: finished plywood top, space for miter and table saws, and storage for extra tools. Also built a wall mounted storage space for drill guns, bits and screws.",
+    tags: ["Woodworking"],
     year: 2020,
     cover: "/diy/workbench/IMG_2459.jpg",
     images: [
@@ -267,10 +256,9 @@ const diyProjects: DIYProject[] = [
     ],
   },
   {
-    emoji: "🌱",
-    title: "Raised Planters",
-    desc: "Built a set of cedar raised garden beds from scratch — elevated design with liner, drainage, and a warm walnut stain. From raw lumber to backyard ready.",
-    tags: ["Woodworking", "Outdoor", "Garden"],
+    title: "Planters",
+    desc: "Built a number of cedar planters — interior liner, drainage system and stained.",
+    tags: ["Woodworking"],
     year: 2020,
     cover: "/diy/planters/05-finished.jpg",
     images: [
@@ -445,11 +433,8 @@ export default function DIYPage() {
                 <span className="absolute top-4 right-4 text-xs bg-slate-700 text-slate-400 px-2 py-1 rounded">
                   {project.year}
                 </span>
-                {!project.cover && (
-                  <div className="text-3xl mb-4">{project.emoji}</div>
-                )}
                 <h2 className="text-lg font-semibold text-slate-100 mb-2">
-                  {project.cover ? `${project.emoji} ${project.title}` : project.title}
+                  {project.cover ? `${project.title}` : project.title}
                 </h2>
                 <p className="text-sm text-slate-400 mb-4">{project.desc}</p>
                 <div className="flex flex-wrap gap-2">
