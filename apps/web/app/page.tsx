@@ -9,19 +9,19 @@ const ctaCards = [
   {
     emoji: "🗺️",
     label: "Trips",
-    desc: "Interactive maps of places I've been",
+    desc: "",
     href: "/trips",
   },
   {
     emoji: "🔨",
     label: "DIY",
-    desc: "Home projects built by hand",
+    desc: "",
     href: "/diy",
   },
   {
     emoji: "💻",
     label: "Projects",
-    desc: "Code that ships, bots that trade",
+    desc: "",
     href: "/projects",
   },
 ];
