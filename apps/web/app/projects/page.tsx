@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     emoji: "💎",
     name: "crollateral.finance",
-    desc: "Cronos collateral dashboard for Tectonic Finance DeFi positions. Real-time liquidation price and borrowing power visualization. Built after getting liquidated one too many times.",
+    desc: "Cronos collateral dashboard for Tectonic Finance DeFi positions. Real-time liquidation price and borrowing power visualization.",
     status: "LIVE",
     url: "https://crollateral.finance",
     tags: ["React", "TypeScript", "DeFi", "Cronos", "Web3"],
@@ -38,8 +38,8 @@ const projects: Project[] = [
   {
     emoji: "📊",
     name: "CRO Swing Bot",
-    desc: "Crypto swing trading bot for the Cronos/CRO ecosystem. Multi-strategy sim array running in parallel, evaluating edge before going live.",
-    status: "WIP",
+    desc: "Crypto swing trading bot hooked into the Crypto.com Exchange. Multi-strategy trading bot built with one purpose: accumulate as much CRO as possible.",
+    status: "LIVE",
     tags: ["Python", "Crypto.com API", "Backtesting"],
   },
 ];
@@ -80,7 +80,7 @@ export default function ProjectsPage() {
             <h1 className="text-4xl font-bold text-slate-100 mb-3">
               💻 Projects
             </h1>
-            <p className="text-slate-400">Code that ships. Bots that trade.</p>
+            {/* <p className="text-slate-400">Code that ships. Bots that trade.</p> */}
           </div>
           <a
             href="https://github.com/s5ifty4"

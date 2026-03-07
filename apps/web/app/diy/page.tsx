@@ -393,9 +393,9 @@ export default function DIYPage() {
           <h1 className="text-4xl font-bold text-slate-100 mb-3">
             🔨 DIY Projects
           </h1>
-          <p className="text-slate-400">
+          {/* <p className="text-slate-400">
             Built by hand — mostly YouTube and stubbornness.
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))" }}>
