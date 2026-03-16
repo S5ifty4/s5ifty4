@@ -14,6 +14,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    emoji: "🚗",
+    name: "teslend.com",
+    desc: "Peer-to-peer Tesla rental marketplace. List your Tesla, browse nearby rentals, request bookings, and manage your fleet — built for the Tesla community.",
+    status: "LIVE",
+    url: "https://teslend.com",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind", "Tesla"],
+  },
+  {
     emoji: "💎",
     name: "crollateral.finance",
     desc: "Cronos collateral dashboard for Tectonic Finance DeFi positions. Real-time liquidation price and borrowing power visualization.",
@@ -64,6 +72,8 @@ const tagColors: Record<string, string> = {
   Turborepo: "bg-rose-900/50 text-rose-300",
   "Crypto.com API": "bg-blue-900/50 text-blue-300",
   Backtesting: "bg-orange-900/50 text-orange-300",
+  Supabase: "bg-emerald-900/50 text-emerald-300",
+  Tesla: "bg-red-900/50 text-red-300",
 };
 
 export default function ProjectsPage() {

@@ -12,6 +12,11 @@ const navLinks = [
   { href: "/movies", label: "Movies" },
 ];
 
+const externalLinks = [
+  { href: "https://teslend.com", label: "Teslend" },
+  { href: "https://crollateral.finance", label: "crollateral" },
+];
+
 export function Nav() {
   const pathname = usePathname();
 
@@ -39,6 +44,18 @@ export function Nav() {
               </Link>
             );
           })}
+          <div className="w-px h-4 bg-slate-700 mx-1" />
+          {externalLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 rounded-full text-sm font-medium transition-colors text-slate-400 hover:text-sky-400 hover:bg-sky-400/10"
+            >
+              {link.label} ↗
+            </a>
+          ))}
         </div>
       </div>
     </nav>
