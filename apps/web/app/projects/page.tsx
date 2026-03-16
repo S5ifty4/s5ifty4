@@ -50,6 +50,20 @@ const projects: Project[] = [
     status: "LIVE",
     tags: ["Python", "Crypto.com API", "Backtesting"],
   },
+  {
+    emoji: "⚡",
+    name: "Perp Arb Bot",
+    desc: "Delta-neutral perpetual futures funding rate arbitrage on Hyperliquid DEX. Holds spot exposure while shorting the perp at 1x to harvest funding payments — exits when funding flips or basis diverges.",
+    status: "PRIVATE",
+    tags: ["Python", "Hyperliquid", "DeFi", "Quant Finance"],
+  },
+  {
+    emoji: "🚀",
+    name: "Solana Grad Bot",
+    desc: "Snipes pump.fun token graduations the moment they migrate to PumpSwap at ~$69K market cap. Filters by buy/sell ratio and graduation speed, then trades a tiered exit strategy with trailing stops.",
+    status: "PRIVATE",
+    tags: ["TypeScript", "Solana", "Web3", "pump.fun"],
+  },
 ];
 
 const statusStyles: Record<Project["status"], string> = {
@@ -74,6 +88,9 @@ const tagColors: Record<string, string> = {
   Backtesting: "bg-orange-900/50 text-orange-300",
   Supabase: "bg-emerald-900/50 text-emerald-300",
   Tesla: "bg-red-900/50 text-red-300",
+  Hyperliquid: "bg-purple-900/50 text-purple-300",
+  Solana: "bg-green-900/50 text-green-300",
+  "pump.fun": "bg-pink-900/50 text-pink-300",
 };
 
 export default function ProjectsPage() {
