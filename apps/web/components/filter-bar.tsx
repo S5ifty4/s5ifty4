@@ -2,6 +2,15 @@
 
 import { cn } from "@/lib/utils";
 import type { Category } from "@/lib/trip-data/types";
+import {
+  Utensils,
+  Cake,
+  Landmark,
+  Building2,
+  Plane,
+  Music,
+  type LucideIcon,
+} from "lucide-react";
 
 const DAY_PALETTE = [
   "#e74c3c",
@@ -17,13 +26,13 @@ const DAY_PALETTE = [
   "#1abc9c",
 ];
 
-const CATEGORY_CONFIG: Record<Category, { color: string; emoji: string }> = {
-  hotel: { color: "#e74c3c", emoji: "🏨" },
-  food: { color: "#e67e22", emoji: "🍽️" },
-  dessert: { color: "#e91e8e", emoji: "🧁" },
-  attraction: { color: "#2980b9", emoji: "🗽" },
-  nightlife: { color: "#8e44ad", emoji: "🎵" },
-  transport: { color: "#16a085", emoji: "✈️" },
+const CATEGORY_CONFIG: Record<Category, { color: string; icon: LucideIcon }> = {
+  hotel:      { color: "#e74c3c", icon: Building2 },
+  food:       { color: "#e67e22", icon: Utensils },
+  dessert:    { color: "#e91e8e", icon: Cake },
+  attraction: { color: "#2980b9", icon: Landmark },
+  nightlife:  { color: "#8e44ad", icon: Music },
+  transport:  { color: "#16a085", icon: Plane },
 };
 
 interface FilterBarProps {
@@ -120,7 +129,7 @@ export function FilterBar({
               )}
               style={isSelected ? { backgroundColor: config.color } : undefined}
             >
-              <span>{config.emoji}</span>
+              <config.icon className="w-3.5 h-3.5" />
               <span className="capitalize">{cat}</span>
             </button>
           );

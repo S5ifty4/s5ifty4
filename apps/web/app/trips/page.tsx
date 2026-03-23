@@ -5,6 +5,16 @@ import dynamic from "next/dynamic";
 import { trips } from "@/lib/trip-data";
 import { FilterBar } from "@/components/filter-bar";
 import type { Category, Place } from "@/lib/trip-data/types";
+import {
+  Utensils,
+  Cake,
+  Landmark,
+  Building2,
+  Plane,
+  Music,
+  MapPin,
+  type LucideIcon,
+} from "lucide-react";
 
 const TripMap = dynamic(
   () => import("@/components/trip-map").then((mod) => mod.TripMap),
@@ -18,13 +28,13 @@ const TripMap = dynamic(
   }
 );
 
-const CATEGORY_CONFIG: Record<Category, { color: string; emoji: string; label: string }> = {
-  food:       { color: "#e67e22", emoji: "🍽️",  label: "Food" },
-  dessert:    { color: "#e91e8e", emoji: "🧁",  label: "Dessert" },
-  attraction: { color: "#2980b9", emoji: "🗽",  label: "Attractions" },
-  hotel:      { color: "#e74c3c", emoji: "🏨",  label: "Hotels" },
-  transport:  { color: "#16a085", emoji: "✈️",  label: "Transport" },
-  nightlife:  { color: "#8e44ad", emoji: "🎵",  label: "Nightlife" },
+const CATEGORY_CONFIG: Record<Category, { color: string; icon: LucideIcon; label: string }> = {
+  food:       { color: "#e67e22", icon: Utensils,  label: "Food" },
+  dessert:    { color: "#e91e8e", icon: Cake,       label: "Dessert" },
+  attraction: { color: "#2980b9", icon: Landmark,   label: "Attractions" },
+  hotel:      { color: "#e74c3c", icon: Building2,  label: "Hotels" },
+  transport:  { color: "#16a085", icon: Plane,      label: "Transport" },
+  nightlife:  { color: "#8e44ad", icon: Music,      label: "Nightlife" },
 };
 
 const CATEGORY_ORDER: Category[] = ["food", "dessert", "attraction", "hotel", "transport", "nightlife"];
@@ -180,8 +190,9 @@ export default function TripsPage() {
       {/* Places list below map */}
       {activeCategoryOrder.length > 0 && (
         <section className="bg-slate-950 border-t border-slate-800 px-4 py-8">
-          <h2 className="text-slate-200 text-lg font-semibold mb-6">
-            📍 All Stops
+          <h2 className="text-slate-200 text-lg font-semibold mb-6 flex items-center gap-2">
+            <MapPin className="w-5 h-5" />
+            All Stops
             {filteredPlaces.length > 0 && (
               <span className="ml-2 text-sm font-normal text-slate-500">
                 ({filteredPlaces.length} places)
@@ -197,7 +208,7 @@ export default function TripsPage() {
                 <div key={cat}>
                   {/* Category header */}
                   <div className="flex items-center gap-2 mb-3 pb-2 border-b border-slate-800">
-                    <span className="text-base">{config.emoji}</span>
+                    <config.icon className="w-4 h-4 shrink-0" style={{ color: config.color }} />
                     <h3 className="text-sm font-semibold uppercase tracking-wider"
                       style={{ color: config.color }}>
                       {config.label}

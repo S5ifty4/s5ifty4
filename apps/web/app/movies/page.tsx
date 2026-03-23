@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ThumbsUp, Star, Film, Shuffle } from "lucide-react";
 
 const LANGUAGE_OPTIONS = [
   { value: "en", label: "English" },
@@ -253,14 +254,17 @@ export default function MoviesPage() {
 
                 {/* Ratings Row */}
                 <div className="flex flex-wrap gap-4 mb-4">
-                  <span className="text-slate-100">
-                    <span className="text-lg">🍅</span> {movie.ratings.rottenTomatoes}%
+                  <span className="flex items-center gap-1.5 text-slate-100">
+                    <ThumbsUp className="w-4 h-4 text-red-400" />
+                    {movie.ratings.rottenTomatoes}%
                   </span>
-                  <span className="text-slate-100">
-                    <span className="text-lg">⭐</span> {movie.ratings.imdb}/10
+                  <span className="flex items-center gap-1.5 text-slate-100">
+                    <Star className="w-4 h-4 text-yellow-400" />
+                    {movie.ratings.imdb}/10
                   </span>
-                  <span className="text-slate-100">
-                    <span className="text-lg">🎬</span> {movie.ratings.tmdb.toFixed(1)}/10
+                  <span className="flex items-center gap-1.5 text-slate-100">
+                    <Film className="w-4 h-4 text-sky-400" />
+                    {movie.ratings.tmdb.toFixed(1)}/10
                   </span>
                 </div>
 
@@ -328,7 +332,9 @@ export default function MoviesPage() {
                   disabled={loading}
                   className="px-6 py-2.5 bg-sky-400 hover:bg-sky-500 disabled:bg-sky-400/50 text-slate-900 font-medium rounded-lg transition-colors"
                 >
-                  🎲 Shuffle
+                  <span className="flex items-center gap-2">
+                    <Shuffle className="w-4 h-4" /> Shuffle
+                  </span>
                 </button>
 
                 {/* Total Results */}

@@ -4,22 +4,23 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { Map, Hammer, Code2, type LucideIcon } from "lucide-react";
 
-const ctaCards = [
+const ctaCards: { icon: LucideIcon; label: string; desc: string; href: string }[] = [
   {
-    emoji: "🗺️",
+    icon: Map,
     label: "Trips",
     desc: "",
     href: "/trips",
   },
   {
-    emoji: "🔨",
+    icon: Hammer,
     label: "DIY",
     desc: "",
     href: "/diy",
   },
   {
-    emoji: "💻",
+    icon: Code2,
     label: "Projects",
     desc: "",
     href: "/projects",
@@ -138,7 +139,7 @@ export default function HomePage() {
               href={card.href}
               className="block w-64 h-full p-6 rounded-2xl bg-slate-800/50 border border-slate-700 backdrop-blur-sm hover:border-slate-600 transition-colors"
             >
-              <div className="text-3xl mb-3">{card.emoji}</div>
+              <card.icon className="w-8 h-8 text-slate-300 mb-3" />
               <h2 className="text-lg font-semibold text-slate-100 mb-1">
                 {card.label}
               </h2>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { Hammer, Camera } from "lucide-react";
 
 interface DIYProject {
   title: string;
@@ -390,8 +391,9 @@ export default function DIYPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold text-slate-100 mb-3">
-            🔨 DIY Projects
+          <h1 className="text-4xl font-bold text-slate-100 mb-3 flex items-center justify-center gap-3">
+            <Hammer className="w-9 h-9" />
+            DIY Projects
           </h1>
           {/* <p className="text-slate-400">
             Built by hand — mostly YouTube and stubbornness.
@@ -422,8 +424,9 @@ export default function DIYPage() {
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                   {project.images && project.images.length > 1 && (
-                    <span className="absolute bottom-2 right-2 text-xs bg-black/60 text-white px-2 py-1 rounded">
-                      📷 {project.images.length} photos
+                    <span className="absolute bottom-2 right-2 text-xs bg-black/60 text-white px-2 py-1 rounded flex items-center gap-1">
+                      <Camera className="w-3 h-3" />
+                      {project.images.length} photos
                     </span>
                   )}
                 </button>

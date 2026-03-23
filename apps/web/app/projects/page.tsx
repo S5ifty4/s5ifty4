@@ -1,10 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import {
+  ExternalLink,
+  Car,
+  Gem,
+  Bot,
+  Globe,
+  TrendingUp,
+  Zap,
+  Rocket,
+  Code2,
+  type LucideIcon,
+} from "lucide-react";
 
 interface Project {
-  emoji: string;
+  icon: LucideIcon;
   name: string;
   desc: string;
   status: "LIVE" | "PRIVATE" | "WIP";
@@ -14,7 +25,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    emoji: "🚗",
+    icon: Car,
     name: "teslend.com",
     desc: "Peer-to-peer Tesla rental marketplace. List your Tesla, browse nearby rentals, request bookings, and manage your fleet — built for the Tesla community.",
     status: "LIVE",
@@ -22,7 +33,7 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Supabase", "Tailwind", "Tesla"],
   },
   {
-    emoji: "💎",
+    icon: Gem,
     name: "crollateral.finance",
     desc: "Cronos collateral dashboard for Tectonic Finance DeFi positions. Real-time liquidation price and borrowing power visualization.",
     status: "LIVE",
@@ -30,35 +41,35 @@ const projects: Project[] = [
     tags: ["React", "TypeScript", "DeFi", "Cronos", "Web3"],
   },
   {
-    emoji: "🤖",
+    icon: Bot,
     name: "Kalshi 15m Bot",
     desc: "Algorithmic prediction market trading bot for Kalshi BTC/ETH 15-min threshold markets. Log-normal pricing model, momentum-filtered signals, aggressive limit execution. Live trading.",
     status: "PRIVATE",
     tags: ["Python", "Kalshi API", "Quant Finance"],
   },
   {
-    emoji: "🗺️",
+    icon: Globe,
     name: "s5ifty4.com",
     desc: "This site. Turborepo + Next.js 15 App Router, shadcn/ui, Tailwind, react-leaflet maps, Framer Motion.",
     status: "LIVE",
     tags: ["Next.js", "TypeScript", "Tailwind", "Turborepo"],
   },
   {
-    emoji: "📊",
+    icon: TrendingUp,
     name: "CRO Swing Bot",
     desc: "Crypto swing trading bot hooked into the Crypto.com Exchange. Multi-strategy trading bot built with one purpose: accumulate as much CRO as possible.",
     status: "LIVE",
     tags: ["Python", "Crypto.com API", "Backtesting"],
   },
   {
-    emoji: "⚡",
+    icon: Zap,
     name: "Perp Arb Bot",
     desc: "Delta-neutral perpetual futures funding rate arbitrage on Hyperliquid DEX. Holds spot exposure while shorting the perp at 1x to harvest funding payments — exits when funding flips or basis diverges.",
     status: "PRIVATE",
     tags: ["Python", "Hyperliquid", "DeFi", "Quant Finance"],
   },
   {
-    emoji: "🚀",
+    icon: Rocket,
     name: "Solana Grad Bot",
     desc: "Snipes pump.fun token graduations the moment they migrate to PumpSwap at ~$69K market cap. Filters by buy/sell ratio and graduation speed, then trades a tiered exit strategy with trailing stops.",
     status: "PRIVATE",
@@ -104,10 +115,10 @@ export default function ProjectsPage() {
           className="flex items-start justify-between mb-12"
         >
           <div>
-            <h1 className="text-4xl font-bold text-slate-100 mb-3">
-              💻 Projects
+            <h1 className="text-4xl font-bold text-slate-100 mb-3 flex items-center gap-3">
+              <Code2 className="w-9 h-9" />
+              Projects
             </h1>
-            {/* <p className="text-slate-400">Code that ships. Bots that trade.</p> */}
           </div>
           <a
             href="https://github.com/s5ifty4"
@@ -131,7 +142,7 @@ export default function ProjectsPage() {
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">{project.emoji}</span>
+                  <project.icon className="w-6 h-6 text-slate-300 shrink-0" />
                   <div>
                     <div className="flex items-center gap-3">
                       <h2 className="text-xl font-semibold text-slate-100">
